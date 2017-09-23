@@ -10,20 +10,18 @@ contract DemoInfraDev is Stoppable {
   }
 
   mapping(address => Driver) drivers;
-  mapping(address => Operator) operators;
-  mapping(address => Contract) contracts;
+  mapping(address => address) operators; //Operator Tx Address
+  mapping(address => address) contracts; //Infrasctructure contract Tx Address
 
 
-  
+
   //Driver details [driverID, driverAddress, balance]
   struct Driver {
     address driverID;
     uint driverAddress;
     uint balance;
     }
-  struct Contract {
 
-    }
 /*
 
   function createAuction(string scopeOfWorkHash) returns(address transactionAddress){

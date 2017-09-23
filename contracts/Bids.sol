@@ -16,7 +16,7 @@ contract  Bids {
       string documentHash;
       uint ratingCount;
       }
-
+/*
     function createBid(uint bidAmount, string _documentHash) public returns(string bidHash) {
       //create some random hash string
       bidHash = keccak256(bidAmount, _documentHash);
@@ -34,4 +34,6 @@ contract  Bids {
     function getBid(string bidHash) public returns (address bidAddress) {
 
       }
+
+      */
 }

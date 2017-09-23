@@ -15,10 +15,5 @@ contract Infrastructure {
     bytes32 bidHash;
     }
 
-/*
-  function voteInfrastructure(string tollBoothHash) public returns(bool isSuccess) {
-    bidsContract.updateRating(DemoInfraDev.roads[tollBoothHash].bidHash);
-    }
 
-    */
 }

@@ -3,16 +3,16 @@ pragma solidity ^0.4.15;
 import "truffle/Assert.sol";
 import "../contracts/Auction.sol";
 
-contract TestBookQueueLib{
-  using Auction for Auction.Contract;
+contract TestDemoInfraDev{
+/*using Auction for Auction.Contract;
   using Bids for Bids.BookQueue;
 
   Auction.Contract queue;
-
+*/
   function beforeAll(){
     //queue = BookQueueLib.createNew();
   }
-
+/*
   function test0_AddFirstReader(){
     address readerAddress = 0x3;
     int value = 2;
@@ -49,6 +49,6 @@ contract TestBookQueueLib{
   }
 
   //test function to make sure line enumeration works as expected
-
+*/
 
 }
