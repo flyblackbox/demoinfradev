@@ -1,0 +1,62 @@
+@startuml
+
+participant Publisher
+actor Author
+
+== Publishing ==
+
+
+Author -> Publisher : publish book
+
+activate Publisher
+create participant NewBook
+Publisher -> NewBook : initialize
+deactivate Publisher
+
+
+NewBook -> NewBook : totalSupply = 0
+
+
+
+== Purchasing ==
+actor Reader
+Reader -> NewBook : purchase
+activate NewBook
+NewBook -> NewBook : totalSupply++
+NewBook ->> Reader : issue token
+
+deactivate NewBook
+
+
+
+== Shipping ==
+
+Author -> NewBook : prepareShipment
+activate NewBook
+NewBook --> Author : ok
+deactivate NewBook
+
+...
+
+Reader -> NewBook : requestDelivery
+activate NewBook
+NewBook --> Reader : ok
+deactivate NewBook
+
+...
+
+Author -> NewBook : markShipped
+activate NewBook
+NewBook --> Author : ok
+deactivate NewBook
+
+
+== Author Remittance ==
+
+Author -> NewBook : withdraw
+activate NewBook
+NewBook ->> Author : send ETH
+NewBook --> Author : ok
+deactivate NewBook
+
+@enduml
