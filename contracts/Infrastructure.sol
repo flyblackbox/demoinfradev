@@ -1,13 +1,24 @@
+pragma solidity ^0.4.15;
+import "./DemoInfraDev.sol";
+
+
 contract Infrastructure {
-
-  struct Infrastructure {
-    adddress infrastructureContract;
-    string bidHash
-  };
   address bidsContract;
-  mapping (string => Infrastructure) infrastructures; //(tollBothHash)
 
-  function voteInfrastructure(string tollBothHash) public returns(bool isSuccess) {
-    bidsContract.updateRating(roads[tollBothHash].bidHash);
+  function Infrastructure(){
+
   }
+
+  mapping (string => Contract) contracts; //(tollBothHash)
+  struct Contract {
+    address infrastructureContract;
+    bytes32 bidHash;
+    }
+
+/*
+  function voteInfrastructure(string tollBoothHash) public returns(bool isSuccess) {
+    bidsContract.updateRating(DemoInfraDev.roads[tollBoothHash].bidHash);
+    }
+
+    */
 }
