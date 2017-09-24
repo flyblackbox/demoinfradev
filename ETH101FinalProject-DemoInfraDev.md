@@ -1,4 +1,4 @@
-Demo Infra Dev
+**Demo Infra Dev
 =============
 
 Introduction
@@ -52,3 +52,7 @@ Get operators ratings & past projects via their EIN
 ```
 getOperator()
 ```
+**
+
+![enter image description here](https://i.imgur.com/iVg81hC.png)
+![enter image description here](https://i.imgur.com/tuaQmUJ.png)

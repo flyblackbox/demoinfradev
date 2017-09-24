@@ -1,4 +1,3 @@
-
 pragma solidity ^0.4.15;
 
 import "./Stoppable.sol";
@@ -8,25 +7,36 @@ contract DemoInfraDev is Stoppable {
   function DemoInfraDev(){
 
   }
-
   mapping(address => Driver) drivers;
-  mapping(address => address) operators; //Operator Tx Address
-  mapping(address => address) contracts; //Infrasctructure contract Tx Address
+  /*
 
+  mapping(address => Operator) operators; //Operator Tx Address
+*/
 
+  mapping(address => ContractRecord) contracts; //Infrasctructure contract Tx Address
+
+  struct ContractRecord {
+    address scopeOfWorkHash;
+    mapping (string => string) bids; // (ein, bidHash)
+    }
 
   //Driver details [driverID, driverAddress, balance]
   struct Driver {
-    address driverID;
-    uint driverAddress;
+    bytes32 driverID;
     uint balance;
     }
 
-/*
+  function becomeDriver(bytes32 licensePlate, uint balance) {
+    //Drive registers their car
+    drivers[msg.sender] = Driver({
+                                driverID: licensePlate,
+                                balance: 0
+                                });
+                              }
 
-  function createAuction(string scopeOfWorkHash) returns(address transactionAddress){
-    var instance = new Auction (scopeOfWorkHash)
-    }
+  
+
+
   function viewBidsSortedBy(string sortingParameter) constant returns(bytes32 biddersList){
 
     }
@@ -43,16 +53,17 @@ contract DemoInfraDev is Stoppable {
 
 
       }
-  function becomeDriver(address _driverAddress) {
-    //Author signs up to publish
-    drivers[msg.sender] = Driver({
-                                authorName: _driverAddress,
-                                totalEarned: 0
-                                });
-                              }
+      address driverID;
+      uint driverAddress;
+      uint balance;
+      */
+
+
+  /*
   function voteRoad(){
 
-    }
-
-    */
+    }    address driverID;
+        uint driverAddress;
+        uint balance;
+  */
 }

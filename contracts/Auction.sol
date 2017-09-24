@@ -2,29 +2,27 @@ pragma solidity ^0.4.15;
 
 
 contract Auction {
-  address infrastructure;
-  address bidsContractAddress;
 
-  function Auction() {
-    //createInfrastructure();
-
-    }
   modifier isRegulator(){
     _;
     }
+  function createAuction(string scopeOfWorkHash) returns(address transaction){
 
-  mapping (string => string) bids; // (ein, bidHash)
+    var instance = new Contract ({
+                          scopeOfWorkHash: scopeOfWorkHash
+                        });
 
-  struct Contract {
+    contracts[instance] = ContractRecord({
+                            scopeOfWorkHash: scopeOfWorkHash
+                            });
+                          }
 
     }
-  function createContract(string scopeOfWorkHash) returns(address) {
-
+  function createBid(string ein, uint amount, bytes32 scopeOfWorkHash) {
+    //will call the createBid of bids contract addreess
+    //bidHash returned will be stored in bids map;
     }
   function getBids() {
-
-    }
-  function sortBids() {
 
     }
   function awardContract(string bidId) returns (bool isSuccess){
@@ -33,16 +31,10 @@ contract Auction {
     //close the Auction
     }
 
-  function createBid(string ein, uint amount, bytes32 scopeOfWorkHash) {
-    //will call the createBid of bids contract addreess
-    //bidHash returned will be stored in bids map;
-    }
-
-  /*
-  function voteInfrastructure(string tollBoothHash) public returns(bool isSuccess) {
-    bidsContract.updateRating(DemoInfraDev.roads[tollBoothHash].bidHash);
-    }
-
-    */
-
 }
+
+
+struct Contract {
+  address scopeOfWorkHash;
+  mapping (string => string) bids; // (ein, bidHash)
+  }

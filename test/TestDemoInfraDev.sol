@@ -1,26 +1,30 @@
 pragma solidity ^0.4.15;
 
 import "truffle/Assert.sol";
+import "truffle/DeployedAddresses.sol";
 import "../contracts/Auction.sol";
 
 contract TestDemoInfraDev{
-/*using Auction for Auction.Contract;
-  using Bids for Bids.BookQueue;
+
+  using Auction for Auction.Contract;
+/*using Bids for Bids.Bid;
+*/
 
   Auction.Contract queue;
-*/
+
   function beforeAll(){
     //queue = BookQueueLib.createNew();
   }
-/*
-  function test0_AddFirstReader(){
+
+  function test0_becomeDriver(){
     address readerAddress = 0x3;
     int value = 2;
-
+/*
     queue.Contract(scopeOfWorkHash);
+    */
     Assert.equal(queue.scopeOfWorkHash(), readerAddress, "Reader not added");
   }
-
+/*
   function test1_testAddAnotherReaderHigherValue(){
     address readerAddress = 0x5;
     int value = 3;
